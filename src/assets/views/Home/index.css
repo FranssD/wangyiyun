@@ -1,0 +1,57 @@
+.Home{padding-bottom:60px}
+.menu{display:flex;justify-content:space-between}
+.menu a{display:inline-block;vertical-align:middle;text-align:center;position:relative}
+.menu .icon{display:inline-block;width:11vw;height:11vw;background:#e84b25;border-radius:50%;color:#fff;line-height:11vw;text-align:center;font-size:26px;margin:0 auto 10px}
+.menu span{display:block;color:#b1b1b1;font-size:14px;text-align:center}
+.menu .number{position:absolute;font-style:inherit;line-height:11vw;top:0;text-align:center;width:100%;left:0;color:#fff}
+.recommendList ul{display:flex;justify-content:space-between;flex-wrap:wrap;width:180vw}
+.recommendList li{width:28vw;position:relative}
+.recommendList{overflow-x:auto}
+.recommendList li .name{font-weight:inherit;font-size:12px;margin:5px 0 10px;color:#5f5f5f}
+.recommendList li .playCount{position:absolute;color:#fff;font-size:12px;right:5px;top:5px;z-index:10}
+.recommendList li .pic{border-radius:5px;overflow:hidden;position:relative}
+.recommendList li .pic img{position:relative;z-index:1}
+.recommendList li .pic::after{content:'';position:absolute;width:100%;height:40%;background:linear-gradient(top ,rgba(0,0,0,.36) ,#fff 100%);background:linear-gradient(top ,rgba(7,7,7,.3) 1% ,rgba(0,0,0,0) 99%);background:-o-linear-gradient(top ,rgba(7,7,7,.3) 1% ,rgba(0,0,0,0) 99%);background:-ms-linear-gradient(top ,rgba(7,7,7,.3) 1% ,rgba(0,0,0,0) 99%);background:-moz-linear-gradient(top ,rgba(7,7,7,.3) 1% ,rgba(0,0,0,0) 99%);background:-webkit-linear-gradient(top ,rgba(7,7,7,.3) 1% ,rgba(0,0,0,0) 99%);top:0;z-index:5}
+.newsMusic ul{flex-wrap:wrap}
+.newsMusic li{width:100%;display:flex;flex-wrap:wrap;justify-content:space-between}
+.newsMusic li+li{margin-top:10px}
+.newsMusic .disc{display:none}
+.newsMusic .disc .pic{width:20%}
+.newsMusic .disc .infor{width:65%}
+.newsMusic .disc .description{display: flex;}
+.newsMusic .disc .description .type{line-height: 18px;height: 18px;}
+.newsMusic .disc .btnPlay{width:10%;position:relative}
+.newsMusic .disc img{border-radius:5px}
+.newsMusic .disc .name{font-weight:inherit;font-size:14px;margin:5px 0 0;color:#5f5f5f;display:inline-block}
+.newsMusic .disc .artistName{font-weight:inherit;font-size:14px;margin:5px 0 0;color:rgba(95,95,95,.5);display:inline-block}
+.newsMusic .disc .description .type{color:#e84b25;font-size:12px;border:1px solid #e84b25;border-radius:3px;padding:0 3px;display:inline-block}
+.newsMusic .disc .description .company{color:rgba(95,95,95,.5);margin-left:10px;display:inline-block}
+.newsMusic .disc figure{position:relative}
+.newsMusic .disc i{color:#e84b25;width:30px;height:30px;display:block;position:absolute;text-align:center;line-height:30px;border-radius:50%;background:rgba(255,255,255,.7);right:5px;bottom:5px;border:1px solid rgba(95,95,95,.2);top:50%;transform:translateY(-50%);line-height:30px}
+.newsMusic .disc.active{display:flex}
+.djHot{overflow-x:auto}
+.djHot ul{display:flex;justify-content:space-between;flex-wrap:wrap;width:180vw}
+.djHot li{width:28vw;position:relative}
+.djHot .pic{border-radius:5px;overflow:hidden;position:relative}
+.djHot .pic::after{content:'';position:absolute;width:100%;height:40%;background:linear-gradient(top ,rgba(0,0,0,.36) ,#fff 100%);background:linear-gradient(top ,rgba(7,7,7,.3) 1% ,rgba(0,0,0,0) 99%);background:-webkit-linear-gradient(top ,rgba(7,7,7,.3) 1% ,rgba(0,0,0,0) 99%);top:0;z-index:5}
+.djHot .btnPlay{color:#e84b25;width:30px;height:30px;display:block;position:absolute;text-align:center;line-height:30px;border-radius:50%;background:rgba(255,255,255,.7);right:5px;bottom:5px;border:1px solid rgba(95,95,95,.2);line-height:30px}
+.djHot .infor .name{font-weight:inherit;font-size:14px;margin:5px 0}
+.djHot .infor .rcmdtext{font-weight:inherit;font-size:12px;margin:5px 0 10px;color:#5f5f5f}
+.topList{overflow-x: auto;}
+.topList ul{display: flex;flex-wrap: wrap;}
+.topList li{width: 100%;color: #fff;padding: 15px;border-radius: 5px;position: relative;z-index: 5;border-radius: 5px;overflow: hidden;background: #000;margin-left: 10px;}
+.topList li:nth-child(1){margin-left: 3vw;}
+.topList li .bg{background-size: cover;background-position: center;position: absolute;top: 0;left: 0;height: 100%;width: 100%;z-index: -1;opacity: .4;}
+.topList li .tips{font-size:18px;margin-bottom: 15px;}
+.topList li .minMusic{display: flex;align-items : center;justify-content : space-between;}
+.topList li .minMusic+.minMusic{margin-top: 15px;}
+.topList li .pic{width: 20%;border-radius:5px;overflow: hidden;}
+.topList li .pic img{}
+.topList li .infor{width: 70%;text-align: left;font-size: 16px;display: flex;    align-items: center;}
+.topList li .infor span{display: -webkit-box;}
+.topList li .number{width: 5%;}
+.topList li .line{width: 3%;background:#b1b1b1;height: 1px;margin: 0 2%;}
+.topList li .name{max-width: 50%;}
+.topList li .Author{opacity: .6;max-width: 30%;font-size: 14px;}
+.topList li .style{}
+

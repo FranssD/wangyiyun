@@ -1,0 +1,26 @@
+.account{overflow: hidden;background: #898788;position: relative;}
+.contentFunctionalGroup{height: calc(100% - 52px);position: absolute;top: 52px;width: 100%;    border-radius: 20px 20px 0 0;
+    overflow: hidden;
+    padding: 24vh 0 56px;
+    overflow-y: auto;}
+.contentFunctionalGroup .scroll{background: #fff;    border-radius: 20px 20px 0 0;}
+.contentFunctionalGroup .scroll .top{padding: 10px 0;}
+.contentFunctionalGroup .top .tips{text-align: center;font-size: 16px;padding: 20px 0;}
+.contentFunctionalGroup .top .btnLogIn{background: #fd2518;color: #fff;width: 40%;text-align: center;margin: 0 auto;border-radius: 55px;line-height:40px;font-size: 16px;}
+.contentFunctionalGroup .top ol{display: flex;justify-content: space-between;margin-top: 25px;}
+.contentFunctionalGroup .top li{text-align: center;} 
+.contentFunctionalGroup .top i{display: block;font-size: 26px;color: #fd2518;} 
+.contentFunctionalGroup .top span{display: block;} 
+.contentFunctionalGroup .botomLi{}
+.contentFunctionalGroup .plateTitle{padding: 0 3%;font-size: 16px;line-height: 46px;border-bottom: 1px solid #e6e6e6;}
+.contentFunctionalGroup .botomLi ul{font-size: 16px;}
+.contentFunctionalGroup .botomLi li{padding: 0 3%;display: flex;justify-content: space-between;line-height: 46px;}
+.contentFunctionalGroup .botomLi .icon{width: 10%;font-size: 26px;}
+.contentFunctionalGroup .botomLi .r{width: 90%;display: flex;justify-content: space-between;border-bottom: 1px solid #e6e6e6;}
+.contentFunctionalGroup .botomLi li:nth-last-child(1) .r{border-bottom: 0;}
+.contentFunctionalGroup .botomLi .r span{}
+.contentFunctionalGroup .botomLi .rStyle{}
+.contentFunctionalGroup .botomLi .style{}
+.contentFunctionalGroup .botomLi .icon_arrow{}
+
+

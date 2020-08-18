@@ -1,0 +1,29 @@
+.musicPlay{position:relative;height:100vh;display:flex;align-content:space-between;flex-wrap:wrap;overflow: hidden;}
+.musicPlay .bg{position:absolute;left:0;top:0;width:100%;height:100%}
+.musicPlay .bg::after{content:"";position:absolute;left:0;top:0;width:100%;height:100%;background-color:rgba(0,0,0,.5)}
+.musicPlay .bg img{width:100%;height:100%;object-fit:cover;filter:blur(20px);transform:scale(1.1)}
+.topInof{position:relative;z-index:5;color:#fff;display:flex;align-items:center;justify-content:space-between;padding:10px 0}
+.topInof .btnReturn{font-size:18px}
+.topInof .nameBox{display:flex;justify-content:space-between;flex-wrap:wrap;text-align:center}
+.topInof .nameBox .name{display:block;width:100%;font-size:18px;font-weight:100}
+.topInof .nameBox .Author{display:block;width:100%;opacity:.7}
+.topInof .nameBox .icon{font-size:12px}
+.topInof .share{font-size:20px}
+.topInof ._iconfont{width: 40px;text-align: center;}
+.normalPlayerMiddle{position:relative;z-index:5}
+.normalPlayerMiddle .film{position:relative;width:80%;margin:0 auto;border-radius:50%;border:15px solid rgba(255,255,255,.1)}
+.normalPlayerMiddle .rotateBox{border:12vw solid #272727;box-shadow:0 0 3px 3px #000;border-radius:50%}
+.normalPlayerMiddle .film img{border-radius:50%;box-shadow:0 0 3px 3px #000}
+.normalPlayerBottom{position:relative;z-index:4;color:#fff;padding:10px 0}
+.normalPlayerBottom .normalPlayerProgress{display:flex;justify-content:space-between}
+.normalPlayerBottom .normalPlayerTime{font-size:12px;color:rgba(255,255,255,.2)}
+.normalPlayerBottom .normalPlayerBar{width:100%;position:relative}
+.normalPlayerBottom .indexBarInner{height:1px;width:96%;background:rgba(255,255,255,.2);display:block;position:relative;top:50%;left:2%}
+.normalPlayerBottom .indexProgress{position:absolute;height:100%;width:20%;background:#fff}
+.normalPlayerBottom .indexProgressBtn{left:100%;width:10px;height:10px;background:#fff;border-radius:50%;position:absolute;top:50%;transform:translate(-50%,-50%)}
+.normalPlayerBottom .specialPlayerControl{display:flex;justify-content:space-between;margin-bottom:15px;color:rgba(255,255,255,.6)}
+.normalPlayerBottom .specialPlayerControl i{font-size:22px}
+.normalPlayerControl{display:flex;justify-content:space-between;font-size:22px;align-items:center;color:rgba(255,255,255,.8)}
+.normalPlayerControl i{font-weight:100}
+.normalPlayerControl .btnPlay{font-size:58px}
+audio{visibility: hidden;opacity: 0;}

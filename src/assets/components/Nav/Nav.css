@@ -1,0 +1,9 @@
+.nav{position:fixed;bottom:0;width:100%;background:rgba(255, 255, 255, 0.95);z-index: 100;}
+.nav ul{display:flex}
+.nav li{flex-grow:3;text-align:center;color:rgb(93, 93, 93)}
+.nav li i{display:inline-block;color:rgb(93, 93, 93);width:1.875rem;height:1.875rem;text-align:center;line-height:1.875rem;font-weight:100;border-radius:50%;font-size:1.25rem}
+.nav li span{display:block;font-size:.75rem;color:rgb(93, 93, 93)}
+.nav a{padding:.3125rem 0;display:inline-block}
+.nav a.active i{background:#dd2d1e;color:#fff}
+.nav a.active span{color: #dd2d1e}
+

@@ -1,0 +1,9 @@
+.header{display: flex;justify-content : space-between;padding-top: 12px;padding-bottom: 12px;top: 0;position: fixed;z-index: 50;background: #fff;}
+.header .search{background: rgb(243, 243, 243);border-radius: 12px;padding: 0 5px;width: 73%}
+.header .search input{line-height: 1.875rem;border:none;background: rgb(243, 243, 243);vertical-align: middle;width:calc(100% - 1.5rem)}
+.header .search input::-webkit-input-placeholder{color: #ccc}
+.header .icon{font-size: 26px;width: 30px;text-align: center}
+._iconVoice{}
+._iconAudio{}
+._iconSearch{color: #ccc;font-size: 16px;line-height: 26px;vertical-align: middle;margin-right: .3125rem;display: inline-block}
+

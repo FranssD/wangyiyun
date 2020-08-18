@@ -1,0 +1,9 @@
+.banner{position: relative;margin: 10px auto }
+.banner .pagination{position: absolute;width: 100%;z-index: 5;text-align: center;bottom:5px}
+.banner .pagination span{background: rgba(255, 255, 255, 0.6);opacity: 1;}
+.banner .pagination span.swiper-pagination-bullet-active{background:rgb(221, 47, 47)}
+.banner .li{border-radius:10px;overflow: hidden;}
+.banner .typeTitle{position: absolute;right: 0;bottom: 0;font-size: 12px;color: #fff;padding:2px 5px;border-radius:10px 0 10px}
+.banner .typeTitle.red{background:#e84b25;}
+.banner .typeTitle.blue{background:#25b1e8;}
+
