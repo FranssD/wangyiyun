@@ -1,5 +1,5 @@
 export function _regPhone(data) {
-    let reg = /^(13|15|17|18|19|14)[0-9]{9}$/;
+    let reg = /^((\+)?86|((\+)?86)?)0?1[3458]\d{9}$/;
     return reg.test(data);
 }
 export function _regNull(data) {

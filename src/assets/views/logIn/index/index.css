@@ -1,0 +1,14 @@
+.logIn{background: #db2c1f;position: relative;}
+.logIn .content{position: absolute;top: 50%;left: 50%;transform:translate(-50%,-50%);color: #fff;display: flex;justify-content: center;flex-wrap: wrap;width: 80%;}
+.logIn  .logo{width: 80px;height: 80px;border-radius: 50%;background: #f22a25;display: flex;justify-content: center;align-items: center;font-size: 50px;}
+.logIn  .logo i{}
+.logIn  .btnBox{width: 100%;margin-top: 65px;}
+.logIn .btn{width: 100%;line-height:42px;text-align: center;font-size: 16px;border-radius: 30px;font-weight: bold;}
+.logIn .logIn{background: #fff;color: #db2c1f;}
+.logIn .experience{border: 1px solid #fff;margin-top: 25px;}
+.logIn .terms{color: rgba(255, 255, 255, 0.5);font-size: 12px;text-align:center;margin-top: 35px;}
+.logIn .terms i{width: 10px;height: 10px;display: inline-block;border-radius: 50%;border: 1px solid rgba(255, 255, 255, 0.5);margin-right: 5px;position: relative;}
+.logIn .terms i::after{content: '';position: absolute;top: 50%;left: 50%;transform: translate(-50%,-50%) scale(.7);height: 8px;width: 8px;background: #fff;border-radius: 50%;opacity: 0;}
+.logIn .terms i.active::after{opacity: 1;}
+.logIn .terms span{margin-left:5px;}
+
