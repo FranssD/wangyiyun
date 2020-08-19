@@ -7,14 +7,15 @@ export function _getBanner(data) {
 export function _getPersonalized(data) {
    return axios.get('http://localhost:8000/personalized' + data)
 }
-//新碟上架
-export function _getTopAlbum(data) {
-   return axios.get('http://localhost:8000/top/album' + data)
-}
 
-//新碟上架
+//新歌
 export function _getTopSong(data) {
    return axios.get('http://localhost:8000/top/song' + data)
+}
+
+//全部新碟
+export function _getAlbumNew(data) {
+   return axios.get('http://localhost:8000/album/new' + data)
 }
 
 //热门电台
@@ -23,8 +24,8 @@ export function _getDjHot(data) {
 }
 
 //热门电台
-export function _getTopList(data) {
-   return axios.get('http://localhost:8000/top/list' + data)
+export function _getTopPlaylistHighquality(data) {
+   return axios.get('http://localhost:8000/top/playlist/highquality' + data)
 }
 
 //音乐是否可用

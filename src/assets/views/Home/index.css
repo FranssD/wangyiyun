@@ -17,15 +17,16 @@
 .newsMusic li+li{margin-top:10px}
 .newsMusic .disc{display:none}
 .newsMusic .disc .pic{width:20%}
-.newsMusic .disc .infor{width:65%}
-.newsMusic .disc .description{display: flex;}
-.newsMusic .disc .description .type{line-height: 18px;height: 18px;}
+.newsMusic .disc .infor{width:65%;display: flex;flex-wrap: wrap;    align-self: center;}
+.newsMusic .disc .description{display: flex;flex-wrap: wrap;}
+.newsMusic .disc .description,.newsMusic .disc .top{width: 100%;}
+.newsMusic .disc .description .type{line-height: 18px;height: 20px;}
 .newsMusic .disc .btnPlay{width:10%;position:relative}
 .newsMusic .disc img{border-radius:5px}
 .newsMusic .disc .name{font-weight:inherit;font-size:14px;margin:5px 0 0;color:#5f5f5f;display:inline-block}
 .newsMusic .disc .artistName{font-weight:inherit;font-size:14px;margin:5px 0 0;color:rgba(95,95,95,.5);display:inline-block}
 .newsMusic .disc .description .type{color:#e84b25;font-size:12px;border:1px solid #e84b25;border-radius:3px;padding:0 3px;display:inline-block}
-.newsMusic .disc .description .company{color:rgba(95,95,95,.5);margin-left:10px;display:inline-block}
+.newsMusic .disc .description .company{color:rgba(95,95,95,.5);margin-left:10px;display:inline-block;width:60%;height: 20px;overflow: hidden;}
 .newsMusic .disc figure{position:relative}
 .newsMusic .disc i{color:#e84b25;width:30px;height:30px;display:block;position:absolute;text-align:center;line-height:30px;border-radius:50%;background:rgba(255,255,255,.7);right:5px;bottom:5px;border:1px solid rgba(95,95,95,.2);top:50%;transform:translateY(-50%);line-height:30px}
 .newsMusic .disc.active{display:flex}

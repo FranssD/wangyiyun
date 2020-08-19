@@ -31,7 +31,7 @@ export default class Home extends React.Component {
                     <div className="scroll">
                         <div className="top _contentM94">
                             <div className="tips">手机电脑多端同步，尽享海量高品质音乐</div>
-                            <div className="btnLogIn">立即登录</div>
+                            <div className="btnLogIn" onClick={this.linkLogin.bind(this)}>立即登录</div>
                             <ol>
                                 <li>
                                     <i className="_iconfont">&#xe616;</i>
@@ -266,5 +266,8 @@ export default class Home extends React.Component {
         //     audio: this.audio
         // })
 		that.getMusic()
-	}
+    }
+    linkLogin(){
+        this.props.history.push({ pathname: '/logIn', state:'' });
+    }
 }

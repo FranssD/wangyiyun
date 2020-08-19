@@ -27,7 +27,7 @@ export default class Home extends React.Component {
                             </select>
                             <input type="tel" placeholder="输入手机号" onBlur={this.handleBlur.bind(this)} maxLength="11" />
                         </div>
-                        <button type="button" coClick={this.btnNext.bind(this)} className={`_btn btnNextStep ${this.state.NextStep ? 'active' : ''}`}>下一步</button>
+                        <button type="button" onClick={this.btnNext.bind(this)} className={`_btn btnNextStep ${this.state.NextStep ? 'active' : ''}`}>下一步</button>
                     </div>
                 </div>
             </section>
@@ -51,8 +51,8 @@ export default class Home extends React.Component {
     }
     btnNext = (e) => {
         const that = this;
-        if(that.state.NextStep){
-            //this.props.history.push({ pathname: '/', state:'' });
+        if (that.state.NextStep) {
+            this.props.history.push({ pathname: '/password', state:'' });
         }
     }
 }

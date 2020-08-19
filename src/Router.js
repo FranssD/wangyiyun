@@ -14,6 +14,7 @@ import NavaccountIndex from '../src/assets/views/account/index/index';
 //-------------登录
 import LogIn from '../src/assets/views/logIn/index/index';
 import Phone from '../src/assets/views/logIn/phone/index';
+import Password from '../src/assets/views/logIn/password/index';
 
 //404
 import Error from '../src/assets/views/Error/index';
@@ -32,7 +33,8 @@ const BasicRoute = () => (
             <Route exact path="/musicPlay" component={MusicPlay}/>
             <Route exact path="/logIn" component={LogIn}/>
             <Route exact path="/phone" component={Phone}/>
-            <Route path="/error" component={Error}/>
+            <Route exact path="/password" component={Password}/>
+            <Route path="/error" component={Password}/>
             <Route path="*" render={(props) => <Redirect to='/error'/>}/>
         </Switch>
     </Router>

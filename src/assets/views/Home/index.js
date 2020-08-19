@@ -6,7 +6,7 @@ import Nav from '../../components/Nav/Nav'
 import Banner from '../../components/Banner/Banner'
 import Header from '../../components/Header/Header'
 import './index.css';
-import { _getBanner, _getPersonalized, _getTopAlbum, _getTopSong,_getDjHot ,_getTopList} from '../../../server'
+import { _getBanner, _getPersonalized, _getTopAlbum, _getAlbumNew, _getDjHot, _getTopPlaylistHighquality, _getTopSong } from '../../../server'
 
 
 class Home extends React.Component {
@@ -18,17 +18,17 @@ class Home extends React.Component {
 			bannerList: [],
 			date: '',
 			resultList: [],
-			albumsList: [],
 			topSongList: [],
-			styleId:0,
-			personalized:[],
-			DjHotList:[],
-			_W_TopList:'',
-			TopListArray:[],
-			__Header:{
-				microphone:true,
-				QRcode:false,
-				search:true
+			AlbumNewList: [],
+			styleId: 0,
+			personalized: [],
+			DjHotList: [],
+			_W_TopList: '',
+			TopPlaylistHighquality: [],
+			__Header: {
+				microphone: true,
+				QRcode: false,
+				search: true
 			}
 		}
 	}
@@ -36,10 +36,9 @@ class Home extends React.Component {
 		console.log('在渲染前调用,在客户端也在服务端。')
 	}
 	render() {
-		console.log('render')
 		return (
 			<section className="Home _ptop54">
-				<Header default={this.state.__Header}/>
+				<Header default={this.state.__Header} />
 				<Nav />
 				<Banner bannerList={this.state.bannerList} />
 				<nav className='menu _contentM94 _mbot20'>
@@ -98,58 +97,60 @@ class Home extends React.Component {
 					<div className="_titlePlate">
 						<span className='minTitpe'>4月1日</span>
 						<h2 className='title'>
-							<span onClick={this.onClickTabSong.bind(this, 0)} className={this.state.styleId===0?'active':''}>新碟</span>
-							<span onClick={this.onClickTabSong.bind(this, 1)} className={this.state.styleId===1?'active':''}>新歌</span>
+							<span onClick={this.onClickTabSong.bind(this, 0)} className={this.state.styleId === 0 ? 'active' : ''}>新歌</span>
+							<span onClick={this.onClickTabSong.bind(this, 1)} className={this.state.styleId === 1 ? 'active' : ''}>新碟</span>
 						</h2>
 						<NavLink to='/me' className="borderNavlink">歌单广场</NavLink>
 					</div>
 					<div className='newsMusic _mtop20'>
-						<ul className={['disc',this.state.styleId===0?' active':''].join('')}>
-							{
-								this.state.albumsList.map((item, i) => {
-									return (
-										<li key={i}>
-											<figure className="pic">
-												<img src={item.picUrl} alt='' />
-											</figure>
-											<div className="infor">
-												<div className="top">
-													<h3 className="name _TexTrow1">{item.name} </h3>
-													<span className="artistName _TexTrow1"> -- {item.artist.name}</span>
-												</div>
-												<div className="description">
-													<span className="type">{item.type}</span>
-													<span className="company ">{item.company}</span>
-												</div>
-											</div>
-											<span className="btnPlay ">
-												<i className="_iconfont">&#xe609;</i>
-											</span>
-										</li>
-									)
-								})
-							}
-
-						</ul>
-						<ul className={this.state.styleId==1?'disc active':'disc'}>
+						<ul className={['disc', this.state.styleId === 0 ? ' active' : ''].join('')}>
 							{
 								this.state.topSongList.map((item, i) => {
-									if(i<3){
+									if (i < 3) {
 										return (
-											<li key={i} className="song">
+											<li key={i}>
 												<figure className="pic">
 													<img src={item.album.picUrl} alt='' />
 												</figure>
-												 <div className="infor">
+												<div className="infor">
 													<div className="top">
 														<h3 className="name _TexTrow1">{item.name} </h3>
 														<span className="artistName _TexTrow1"> -- {item.artists[0].name}</span>
 													</div>
 													<div className="description">
-														<span className="type">{item.album.type}</span>
-														<span className="company _TexTrow1">{item.album.name}</span>
+														<span className="type">{item.album.subType}</span>
+														<span className="company ">{item.alias[0]}</span>
 													</div>
-												</div> 
+												</div>
+												<span className="btnPlay ">
+													<i className="_iconfont">&#xe609;</i>
+												</span>
+											</li>
+										)
+									}
+								})
+							}
+
+						</ul>
+						<ul className={this.state.styleId == 1 ? 'disc active' : 'disc'}>
+							{
+								this.state.AlbumNewList.map((item, i) => {
+									if (i < 3) {
+										return (
+											<li key={i} className="song">
+												<figure className="pic">
+													<img src={item.blurPicUrl} alt='' />
+												</figure>
+												<div className="infor">
+													<div className="top">
+														<h3 className="name _TexTrow1">{item.name} </h3>
+														<span className="artistName _TexTrow1"> -- {item.artist.name}</span>
+													</div>
+													<div className="description">
+														<span className="type">{item.subType}</span>
+														<span className="company _TexTrow1">{item.company}</span>
+													</div>
+												</div>
 												<span className="btnPlay ">
 													<i className="_iconfont">&#xe609;</i>
 												</span>
@@ -168,25 +169,25 @@ class Home extends React.Component {
 						<NavLink to='/me' className="borderNavlink">查看更多</NavLink>
 					</div>
 					<div className="topList _mtop20">
-						<ul className='' style={{width:this.state._W_TopList}}>
+						<ul className='' style={{ width: this.state._W_TopList }}>
 							{
-								this.state.TopListArray.map((item,i)=>{
-									return(
-										<li key={i} style={{width:(this.state._W_TopList/this.state.TopListArray.length)-15}}>
-											<div className="tips">{item.name} <i className="_iconfont">&#xe608;</i></div>
+								this.state.TopPlaylistHighquality.map((item, i) => {
+									return (
+										<li key={i} style={{ width: (this.state._W_TopList / this.state.TopPlaylistHighquality.length) - 15 }}>
+											<div className="tips">{item.name}<i className="_iconfont">&#xe608;</i></div>
 											{
-												item.list.map((data,x)=>{
-													if(x<3){
-														return(
+												item.list.map((data, x) => {
+													if (x < 3) {
+														return (
 															<div className="minMusic" key={x}>
 																<figure className="pic">
-																	<img src={data.al.picUrl} alt='' />
+																	<img src={data.coverImgUrl} alt='' />
 																</figure>
 																<div className="infor">
-																	<span className='number'>{x+1}</span>
-																	<span className='name _TexTrow1'>{data.al.name}</span>
+																	<span className='number'>{x + 1}</span>
+																	<span className='name _TexTrow1'>{data.name}</span>
 																	<span className='line'></span>
-																	<span className="Author _TexTrow1">{data.ar[0].name}</span>
+																	<span className="Author _TexTrow1">{data.creator.nickname}</span>
 																</div>
 																<div className="style">新</div>
 															</div>
@@ -194,7 +195,7 @@ class Home extends React.Component {
 													}
 												})
 											}
-											<div className="bg" style={{backgroundImage:'linear-gradient(transparent, rgb(0, 0, 0)),url('+item.list[0].al.picUrl+')'}}></div>
+											<div className="bg" style={{ backgroundImage: 'linear-gradient(transparent, rgb(0, 0, 0)),url(' + item.list[0].coverImgUrl + ')' }}></div>
 										</li>
 									)
 								})
@@ -211,18 +212,18 @@ class Home extends React.Component {
 					<div className="djHot _mtop10">
 						<ul>
 							{
-								this.state.DjHotList.map((item,i)=>{
-									return(
-									<li key={i}>
-										<figure className="pic">
-											<img src={item.picUrl} alt='' />
-											<i className="btnPlay _iconfont">&#xe609;</i>
-										</figure>
-										<div className="infor">
-											<h3 className="name _TexTrow1">{item.name}</h3>
-											<span className="rcmdtext _TexTrow2">{item.rcmdtext}</span>
-										</div>
-									</li>
+								this.state.DjHotList.map((item, i) => {
+									return (
+										<li key={i}>
+											<figure className="pic">
+												<img src={item.picUrl} alt='' />
+												<i className="btnPlay _iconfont">&#xe609;</i>
+											</figure>
+											<div className="infor">
+												<h3 className="name _TexTrow1">{item.name}</h3>
+												<span className="rcmdtext _TexTrow2">{item.rcmdtext}</span>
+											</div>
+										</li>
 									)
 								})
 							}
@@ -232,7 +233,7 @@ class Home extends React.Component {
 			</section>
 		)
 	}
-	
+
 	date() {
 		const that = this;
 		let now = new Date();
@@ -257,29 +258,29 @@ class Home extends React.Component {
 			that.setState({
 				resultList: res.data.result
 			})
-			
+
 		}
 	}
 	async getTopAlbum() {
 		const that = this;
-		const res = await _getTopAlbum('?limit=3')
-		if (res.data.code === 200) {
-			console.log(res.data.albums)
-			that.setState({
-				albumsList: res.data.albums
-			})
-		}
-	}
-	async getTopSong() {
-		const that = this;
 		const res = await _getTopSong('?type=0')
 		if (res.data.code === 200) {
+			console.log(res.data.albums)
 			that.setState({
 				topSongList: res.data.data
 			})
 		}
 	}
-	async getDjHot(){
+	async getTopSong() {
+		const that = this;
+		const res = await _getAlbumNew('?area=ALL&limit=4')
+		//if (res.data.code === 200) {
+		that.setState({
+			AlbumNewList: res.data.albums
+		})
+		//}
+	}
+	async getDjHot() {
 		const that = this;
 		const res = await _getDjHot('?limit=7')
 		if (res.data.code === 200) {
@@ -288,60 +289,61 @@ class Home extends React.Component {
 			})
 		}
 	}
-	async getTopList(){
+	async getTopList() {
 		const that = this;
-		const res1 = await _getTopList('?idx=1')
+		const res1 = await _getTopPlaylistHighquality('?limit=3&cat=华语')
 		if (res1.data.code === 200) {
-			let res=that.state.TopListArray
+			let res = that.state.TopPlaylistHighquality
 			res.push({
-				name:res1.data.playlist.name,
-				list:res1.data.playlist.tracks
+				list: res1.data.playlists,
+				name:'华语'
 			})
 			that.setState({
-				TopListArray: res
+				TopPlaylistHighquality: res
 			})
 		}
-		const res2 = await _getTopList('?idx=2')
+		const res2 = await _getTopPlaylistHighquality('?limit=3&cat=古风')
 		if (res2.data.code === 200) {
-			let res=that.state.TopListArray
+			let res = that.state.TopPlaylistHighquality
 			res.push({
-				name:res2.data.playlist.name,
-				list:res2.data.playlist.tracks
+				list: res2.data.playlists,
+				name:'古风'
 			})
 			that.setState({
-				TopListArray: res
+				TopPlaylistHighquality: res
 			})
 		}
-		const res3 = await _getTopList('?idx=3')
+		const res3 = await _getTopPlaylistHighquality('?limit=3&cat=民谣')
 		if (res3.data.code === 200) {
-			let res=that.state.TopListArray
+			let res = that.state.TopPlaylistHighquality
 			res.push({
-					name:res3.data.playlist.name,
-					list:res3.data.playlist.tracks
+				list: res3.data.playlists,
+				name:'民谣'
 			})
 			that.setState({
-				TopListArray: res
+				TopPlaylistHighquality: res
 			})
 		}
-		const res4 = await _getTopList('?idx=4')
+		const res4 = await _getTopPlaylistHighquality('?limit=3&cat=轻音乐')
 		if (res4.data.code === 200) {
-			let res=that.state.TopListArray
+			let res = that.state.TopPlaylistHighquality
 			res.push({
-				name:res4.data.playlist.name,
-				list:res4.data.playlist.tracks
+				list: res4.data.playlists,
+				name:'轻音乐'
 			})
 			that.setState({
-				TopListArray: res
+				TopPlaylistHighquality: res
 			})
 		}
+		console.log(that.state.TopPlaylistHighquality)
 		that.setState({
-			_W_TopList:(window.screen.availWidth*.94)*that.state.TopListArray.length
+			_W_TopList: (window.screen.availWidth * .94) * that.state.TopPlaylistHighquality.length
 		})
 	}
 	componentDidMount() {
 		console.log('在第一次渲染后调用,可以通过this.getDOMNode()来进行访问，可以开始ajax')
 		const that = this;
-		
+
 		that.date()
 		that.getBanner()
 		that.getPersonalized()
@@ -353,16 +355,16 @@ class Home extends React.Component {
 	onClickTabSong(styleId) {
 		const that = this;
 		that.setState({
-			styleId:styleId
+			styleId: styleId
 		})
 		console.log(styleId)
 	}
 	componentDidUpdate() {
-		console.log('在组件完成更新后立即调用。在初始化时不会被调用')
+		//console.log('在组件完成更新后立即调用。在初始化时不会被调用')
 	}
 	componentWillUnmount() {
-		console.log('在组件从 DOM 中移除的时候立刻被调用。')
+		//console.log('在组件从 DOM 中移除的时候立刻被调用。')
 	}
-	
+
 }
 export default Home
